@@ -1,0 +1,117 @@
+.testing-breakpoints {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    z-index: 2000;
+    opacity: 0.8;
+
+    .size {
+        display: none;
+    }
+
+    @include breakpoint(xxlarge up) {
+        .xxl {
+            display: inline-block !important;
+        }
+    }
+
+    @include breakpoint(xlarge only) {
+        .xl {
+            display: inline-block !important;
+        }
+    }
+
+    @include breakpoint(large only) {
+        .l {
+            display: inline-block !important;
+        }
+    }
+
+    @include breakpoint(medium only) {
+        .m {
+            display: inline-block !important;
+        }
+    }
+
+    @include breakpoint(small only) {
+        .s {
+            display: inline-block !important;
+        }
+    }
+}
+
+
+// ------------ Testing: Grid ------------
+
+$testing1: rgba(#00adad, 0.1);
+$testing2: rgba(red, 0.1);
+
+.testing-columns {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%; 
+    z-index: 300;
+    pointer-events: none;
+
+    .testing-grid {
+        height: 100%;
+
+        >div {
+            height: 100%;
+        }
+    }
+
+    @include breakpoint(xxlarge up) {
+        .testing-grid {
+            >div {
+                background: $testing1;
+            }
+        }
+    }
+
+    @include breakpoint(xlarge only) {
+        .testing-grid {
+            >div {
+                background: $testing2;
+            }
+        }
+    }
+
+    @include breakpoint(large only) {
+        .testing-grid { 
+            >div {
+                background: $testing1;
+            }
+        }
+    }
+
+    @include breakpoint(medium only) {
+        .testing-grid {
+            >div {
+                background: $testing2;
+
+                &:nth-child(n+9) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(small only) {
+        .testing-grid {
+            >div {
+                background: $testing1;
+
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

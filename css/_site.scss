@@ -1,0 +1,59 @@
+html {
+  &.js {
+    justify-items: initial;
+  }
+}
+
+body {
+
+  &.kodeks-load * {
+    transition: none !important;
+  }
+}
+
+@include base-fonts;
+
+#site-content,
+.site-footer,
+.site-header,
+.testing-columns {
+  container: main / inline-size;
+}
+
+#skip-to-content {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  pointer-events: none;
+  opacity: 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 20px;
+  background-color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+
+  &:focus {
+    pointer-events: all;
+    opacity: 1;
+    border: 0;
+    outline: none;
+  }
+}
+
+[class^="icon"] {
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}

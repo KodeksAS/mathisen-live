@@ -1,0 +1,162 @@
+:root {
+  --grid-width: calc((var(--inline-padding) * 2) + 1340px); // Max width .grid class
+  --column: calc(((var(--grid-width) - (var(--inline-padding) * 2)) - (var(--gutter) * 11)) / 12);
+  --inline-padding: #{rem-calc(30)};
+  --block-padding: #{rem-calc(50)};
+  --gutter: #{rem-calc(20)};
+
+  /* TYPOGRAPHY */
+  --font-family: 'Source Sans',
+    sans-serif;
+
+  // DESKTOP
+
+  // h1 
+  --h1-family: var(--font-family);
+  --h1-weight: 600;
+  --h1-size: 75px;
+  --h1-line-height: 77px;
+  --h1-font: var(--h1-weight) var(--h1-size)/var(--h1-line-height) var(--h1-family);
+
+  // h2
+  --h2-family: var(--font-family);
+  --h2-weight: 600;
+  --h2-size: 57px;
+  --h2-line-height: 57px;
+  --h2-font: var(--h2-weight) var(--h2-size)/var(--h2-line-height) var(--h2-family);
+
+  // h3
+  --h3-family: var(--font-family);
+  --h3-weight: 600;
+  --h3-size: 46px;
+  --h3-line-height: 53px;
+  --h3-font: var(--h3-weight) var(--h3-size)/var(--h3-line-height) var(--h3-family);
+
+  // h4
+  --h4-family: var(--font-family);
+  --h4-weight: 700;
+  --h4-size: 35px;
+  --h4-line-height: 43px;
+  --h4-font: var(--h4-weight) var(--h4-size)/var(--h4-line-height) var(--h4-family);
+
+  // h5
+  --h5-family: var(--font-family);
+  --h5-weight: 700;
+  --h5-size: 35px;
+  --h5-line-height: 43px;
+  --h5-font: var(--h5-weight) var(--h5-size)/var(--h5-line-height) var(--h5-family);
+
+  // h6
+  --h6-family: var(--font-family);
+  --h6-weight: 700;
+  --h6-size: 35px;
+  --h6-line-height: 43px;
+  --h6-font: var(--h6-weight) var(--h6-size)/var(--h6-line-height) var(--h6-family);
+
+  // lead
+  --lead-family: var(--font-family);
+  --lead-weight: 400;
+  --lead-size: 26px;
+  --lead-line-height: 34px;
+  --lead-font: var(--lead-weight) var(--lead-size)/var(--lead-line-height) var(--lead-family);
+
+  // body
+  --body-family: var(--font-family);
+  --body-weight: 400;
+  --body-size: 18px;
+  --body-line-height: 26px;
+  --body-font: var(--body-weight) var(--body-size)/var(--body-line-height) var(--body-family);
+
+  // quote
+  --quote-family: var(--font-family);
+  --quote-weight: 400;
+  --quote-size: 18px;
+  --quote-line-height: 26px;
+  --quote-font: var(--quote-weight) var(--quote-size)/var(--quote-line-height) var(--quote-family);
+
+
+  // Media queries (defines section as container so it applies to backend as well)
+  .admin section {
+    container: main / inline-size;
+  }
+
+  section {
+
+    // Fonts
+    @include container(medium down) {
+      --h1-size: #{rem-calc(50)};
+    }
+
+    // Breakpoints gutter/padding
+    @include container(medium down) {
+      --inline-padding: #{rem-calc(20)};
+    }
+  }
+
+  /* COLORS */
+
+  --orange: #E73D08;
+  --teal: #04CDA9;
+  --grey: #EBEEED;
+  --black: #000000;
+
+  /* MISC */
+
+  // Transitions
+  --bezier: .5s cubic-bezier(0, 0, 0, 1);
+
+  // Icons
+  $icons: comma, separated, list;
+
+  @each $icon in $icons {
+    --icon-#{$icon}: url('../assets/icon-#{$icon}.svg');
+
+    .icon-#{$icon} {
+      &::after {
+        mask-image: var(--icon-#{$icon});
+      }
+    }
+  }
+}
+
+// Font tags local variables
+@mixin base-fonts {
+  body {
+    font: var(--body-font);
+    text-wrap: pretty;
+  }
+
+  h1 {
+    font: var(--h1-font);
+    text-wrap: balance;
+  }
+
+  h2 {
+    font: var(--h2-font);
+    text-wrap: balance;
+  }
+
+  h3 {
+    font: var(--h3-font);
+    text-wrap: balance;
+  }
+
+  h4 {
+    font: var(--h4-font);
+    text-wrap: balance;
+  }
+
+  h5 {
+    font: var(--h5-font);
+    text-wrap: balance;
+  }
+
+  h6 {
+    font: var(--h6-font);
+    text-wrap: balance;
+  }
+
+  blockquote {
+    font: var(--quote-font);
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/boiler",
+  "title": "boiler",
+  "description": "boiler block",
+  "editorStyle": "file:./boiler.css",
+  "editorScript": "file:./boiler.js",
+  "category": "kodeks-blocks",
+  "icon": "block-default",
+  "apiVersion": 2,
+  "keywords": [
+    "boiler"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "boiler.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

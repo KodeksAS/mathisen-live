@@ -1,0 +1,1079 @@
+//------------- Grid -------------//
+
+[class^="grid"],
+[class*=" grid"] {
+
+  --_gap: var(--gap, #{rem-calc(30)});
+  --_gutter: var(--gutter, #{rem-calc(20)});
+  --_inline-padding: var(--inline-padding, #{rem-calc(65)});
+  --_block-padding: var(--block-padding, var(--inline-padding));
+
+  width: 100%;
+  max-width: var(--grid-width);
+  display: grid;
+  display: -ms-grid;
+  column-gap: var(--_gutter);
+  row-gap: var(--_gap);
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.padding {
+    padding: var(--_block-padding) var(--_inline-padding);
+  }
+
+  &.block-padding {
+    padding-block: var(--block-padding);
+  }
+
+  &.inline-padding {
+    padding-inline: var(--_inline-padding);
+  }
+
+  &.margin {
+    margin: var(--_block-padding) auto;
+    width: calc(100% - (var(--_inline-padding) * 2));
+    max-width: calc(var(--grid-width) - (var(--_inline-padding) * 2));
+  }
+
+  &.inline-margin {
+    margin-block: 0 auto;
+    width: calc(100% - (var(--_inline-padding) * 2));
+    max-width: calc(var(--grid-width) - (var(--_inline-padding) * 2));
+  }
+
+
+  &.block-margin {
+    margin-block: var(--block-padding);
+  }
+
+  &.col {
+    grid-auto-flow: column;
+
+    &.flex {
+      flex-direction: row;
+
+      >.grid {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+  }
+
+  &.row {
+    grid-auto-flow: row;
+
+    &.flex {
+      flex-direction: column;
+
+      >.grid {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+  }
+
+  @include container(xlarge up) {
+    &.xl-col {
+      grid-auto-flow: column;
+    }
+
+    &.xl-row {
+      grid-auto-flow: row;
+    }
+  }
+
+  @include container(medium down) {
+    &.m-col {
+      grid-auto-flow: column;
+    }
+
+    &.m-row {
+      grid-auto-flow: row;
+    }
+  }
+
+  @include container(small only) {
+    &.s-col {
+      grid-auto-flow: column;
+    }
+
+    &.s-row {
+      grid-auto-flow: row;
+    }
+  }
+
+  &.full {
+    max-width: none;
+  }
+}
+
+.span-all {
+  grid-column: 1/-1;
+}
+
+.end-none {
+  grid-column-end: none;
+}
+
+@mixin grid($grid-count) {
+  $percent-calc: calc(100% / $grid-count);
+  $percent-fix: calc(var(--_gutter) / $grid-count);
+  $percent-sum: calc(var(--_gutter) - $percent-fix);
+  $percent: calc(#{$percent-calc} - #{$percent-sum});
+
+  $percent-fix-small: calc(var(--_gutter) / $grid-count);
+  $percent-sum-small: calc(var(--_gutter) - $percent-fix-small);
+  $percent-small: calc(#{$percent-calc} - #{$percent-sum-small});
+
+  $percent-fix-medium: calc(var(--_gutter) / $grid-count);
+  $percent-sum-medium: calc(var(--_gutter) - $percent-fix-medium);
+  $percent-medium: calc(#{$percent-calc} - #{$percent-sum-medium});
+
+  grid-template-columns: repeat($grid-count, minmax(0, 1fr));
+
+  * {
+    &:not(.google-map *) {
+      max-width: 100%;
+      // overflow: hidden;
+    }
+  }
+
+  &.auto {
+    grid-template-columns: repeat($grid-count, auto) !important;
+  }
+
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    >* {
+      width: $percent;
+
+      @include container(medium down) {
+        width: $percent-medium;
+      }
+
+      @include container(small only) {
+        width: $percent-small;
+      }
+    }
+  }
+}
+
+@mixin grid-col-($grid-count) {
+  $percent-calc: calc(100% / $grid-count);
+  $percent-fix: calc(var(--_gutter) / $grid-count);
+  $percent-sum: calc(var(--_gutter) - $percent-fix);
+  $percent: calc(#{$percent-calc} - #{$percent-sum});
+
+  $percent-fix-small: calc(var(--_gutter) / $grid-count);
+  $percent-sum-small: calc(var(--_gutter) - $percent-fix-small);
+  $percent-small: calc(#{$percent-calc} - #{$percent-sum-small});
+
+  $percent-fix-medium: calc(var(--_gutter) / $grid-count);
+  $percent-sum-medium: calc(var(--_gutter) - $percent-fix-medium);
+  $percent-medium: calc(#{$percent-calc} - #{$percent-sum-medium});
+
+  grid-template-columns: repeat($grid-count, minmax(0, 1fr));
+
+  * {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &.auto {
+    grid-template-columns: repeat($grid-count, auto) !important;
+  }
+
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    >* {
+      width: $percent;
+
+      @include container(medium down) {
+        width: $percent-medium;
+      }
+
+      @include container(small only) {
+        width: $percent-small;
+      }
+    }
+  }
+}
+
+@mixin grid-row-($grid-count) {
+  $percent-calc: calc(100% / $grid-count);
+  $percent-fix: calc(var(--_gutter) / $grid-count);
+  $percent-sum: calc(var(--_gutter) - $percent-fix);
+  $percent: calc(#{$percent-calc} - #{$percent-sum});
+
+  $percent-fix-small: calc(var(--_gutter) / $grid-count);
+  $percent-sum-small: calc(var(--_gutter) - $percent-fix-small);
+  $percent-small: calc(#{$percent-calc} - #{$percent-sum-small});
+
+  $percent-fix-medium: calc(var(--_gutter) / $grid-count);
+  $percent-sum-medium: calc(var(--_gutter) - $percent-fix-medium);
+  $percent-medium: calc(#{$percent-calc} - #{$percent-sum-medium});
+
+  grid-template-rows: repeat($grid-count, minmax(0, 1fr));
+
+  * {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &.auto {
+    grid-template-columns: repeat($grid-count, auto) !important;
+  }
+
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    >* {
+      width: $percent;
+
+      @include container(medium down) {
+        width: $percent-medium;
+      }
+
+      @include container(small only) {
+        width: $percent-small;
+      }
+    }
+  }
+
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    $grid-count: $i;
+    @include grid($grid-count);
+  }
+
+  .grid-col-#{$i} {
+    $grid-count: $i;
+    @include grid-col-($grid-count);
+  }
+
+  .grid-row-#{$i} {
+    $grid-count: $i;
+    @include grid-row-($grid-count);
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .grid-xl-#{$i} {
+      $grid-count: $i;
+      @include grid($grid-count);
+    }
+
+    .grid-col-xl-#{$i} {
+      $grid-count: $i;
+      @include grid-col-($grid-count);
+    }
+
+    .grid-row-xl-#{$i} {
+      $grid-count: $i;
+      @include grid-row-($grid-count);
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .grid-m-#{$i} {
+      $grid-count: $i;
+      @include grid($grid-count);
+    }
+
+    .grid-col-m-#{$i} {
+      $grid-count: $i;
+      @include grid-col-($grid-count);
+    }
+
+    .grid-row-m-#{$i} {
+      $grid-count: $i;
+      @include grid-row-($grid-count);
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .grid-s-#{$i} {
+      $grid-count: $i;
+      @include grid($grid-count);
+    }
+
+    .grid-col-s-#{$i} {
+      $grid-count: $i;
+      @include grid-col-($grid-count);
+    }
+
+    .grid-row-s-#{$i} {
+      $grid-count: $i;
+      @include grid-row-($grid-count);
+    }
+  }
+}
+
+@for $gap from 0 through 100 {
+  @if $gap % 5==0 {
+    .cg-#{$gap} {
+      column-gap: #{$gap}px;
+    }
+
+    .rg-#{$gap} {
+      row-gap: #{$gap}px;
+    }
+
+    .gap-#{$gap} {
+      gap: #{$gap}px;
+    }
+  }
+}
+
+@for $gap from 0 through 100 {
+  @if $gap % 5==0 {
+    @include container(xlarge up) {
+      .cg-xl-#{$gap} {
+        column-gap: #{$gap}px;
+      }
+
+      .rg-xl-#{$gap} {
+        row-gap: #{$gap}px;
+      }
+
+      .gap-xl-#{$gap} {
+        gap: #{$gap}px;
+      }
+    }
+  }
+}
+
+@for $gap from 0 through 100 {
+  @if $gap % 5==0 {
+    @include container(medium down) {
+      .cg-m-#{$gap} {
+        column-gap: #{$gap}px;
+      }
+
+      .rg-m-#{$gap} {
+        row-gap: #{$gap}px;
+      }
+
+      .gap-m-#{$gap} {
+        gap: #{$gap}px;
+      }
+    }
+  }
+}
+
+@for $gap from 0 through 100 {
+  @if $gap % 5==0 {
+    @include container(small only) {
+      .cg-s-#{$gap} {
+        column-gap: #{$gap}px;
+      }
+
+      .rg-s-#{$gap} {
+        row-gap: #{$gap}px;
+      }
+
+      .gap-s-#{$gap} {
+        gap: #{$gap}px;
+      }
+    }
+  }
+}
+
+// Rows 
+@for $i from 1 through 12 {
+  .row-#{$i} {
+    grid-row: #{$i};
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .row-xl-#{$i} {
+      grid-row: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .row-m-#{$i} {
+      grid-row: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .row-s-#{$i} {
+      grid-row: #{$i};
+    }
+  }
+}
+
+// Cols 
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: #{$i};
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .col-xl-#{$i} {
+      grid-column: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .col-m-#{$i} {
+      grid-column: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .col-s-#{$i} {
+      grid-column: #{$i};
+    }
+  }
+}
+
+
+
+// Spans
+
+@for $i from 1 through 12 {
+  .span-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+@for $i from 1 through 12 {
+  .start-#{$i} {
+    grid-column-start: #{$i};
+  }
+}
+
+@for $i from 1 through 12 {
+  .end-#{$i} {
+    grid-column-end: #{$i + 1};
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .start-xl-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .start-m-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .start-s-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .end-xl-#{$i} {
+      grid-column-end: #{$i + 1};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .end-m-#{$i} {
+      grid-column-end: #{$i + 1};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .end-s-#{$i} {
+      grid-column-end: #{$i + 1};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(xlarge up) {
+    .span-xl-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(medium down) {
+    .span-m-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include container(small only) {
+    .span-s-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+@include container(xlarge up) {
+  .span-xl-all {
+    grid-column: 1/-1;
+  }
+}
+
+@include container(medium down) {
+  .span-m-all {
+    grid-column: 1/-1;
+  }
+}
+
+@include container(small only) {
+  .span-s-all {
+    grid-column: 1/-1;
+  }
+}
+
+// Justify
+
+.js {
+  justify-items: start;
+}
+
+.je {
+  justify-items: end;
+}
+
+.jc {
+  justify-items: center;
+}
+
+.jcs {
+  justify-content: start;
+}
+
+.jce {
+  justify-content: end;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.jcse {
+  justify-content: space-evenly;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jstr {
+  justify-items: stretch;
+}
+
+.jcstr {
+  justify-content: stretch;
+}
+
+.as {
+  align-items: start;
+}
+
+.ae {
+  align-items: end;
+}
+
+.ac {
+  align-items: center;
+}
+
+.acc {
+  align-content: center;
+}
+
+.acs {
+  align-content: start;
+}
+
+.acsb {
+  align-content: space-between;
+}
+
+.ace {
+  align-content: end;
+}
+
+.astr {
+  align-items: stretch;
+}
+
+.ass {
+  align-self: start;
+}
+
+.ase {
+  align-self: end;
+}
+
+.asc {
+  align-self: center;
+}
+
+.asstr {
+  align-self: stretch;
+}
+
+.jss {
+  justify-self: start;
+}
+
+.jse {
+  justify-self: end;
+}
+
+.jsc {
+  justify-self: center;
+}
+
+.jsstr {
+  justify-self: stretch;
+}
+
+@include container(xlarge up) {
+
+  .xl-js {
+    justify-items: start;
+  }
+
+  .xl-je {
+    justify-items: end;
+  }
+
+  .xl-jc {
+    justify-items: center;
+  }
+
+  .xl-jcs {
+    justify-content: start;
+  }
+
+  .xl-jce {
+    justify-content: end;
+  }
+
+  .xl-jcsb {
+    justify-content: space-between;
+  }
+
+  .xl-jcsa {
+    justify-content: space-around;
+  }
+
+  .xl-jcse {
+    justify-content: space-evenly;
+  }
+
+  .xl-jcc {
+    justify-content: center;
+  }
+
+  .xl-jstr {
+    justify-items: stretch;
+  }
+
+  .xl-as {
+    align-items: start;
+  }
+
+  .xl-ae {
+    align-items: end;
+  }
+
+  .xl-ac {
+    align-items: center;
+  }
+
+  .xl-acc {
+    align-content: center;
+  }
+
+  .xl-acs {
+    align-content: start;
+  }
+
+  .xl-acsb {
+    align-content: space-between;
+  }
+
+  .xl-ace {
+    align-content: end;
+  }
+
+  .xl-astr {
+    align-items: stretch;
+  }
+
+  .xl-ass {
+    align-self: start;
+  }
+
+  .xl-ase {
+    align-self: end;
+  }
+
+  .xl-asc {
+    align-self: center;
+  }
+
+  .xl-asstr {
+    align-self: stretch;
+  }
+
+  .xl-jss {
+    justify-self: start;
+  }
+
+  .xl-jse {
+    justify-self: end;
+  }
+
+  .xl-jsc {
+    justify-self: center;
+  }
+
+  .xl-jsstr {
+    justify-self: stretch;
+  }
+
+  .xl-jcstr {
+    justify-content: stretch;
+  }
+}
+
+
+@include container(medium down) {
+
+  .m-js {
+    justify-items: start;
+  }
+
+  .m-je {
+    justify-items: end;
+  }
+
+  .m-jc {
+    justify-items: center;
+  }
+
+  .m-jcs {
+    justify-content: start;
+  }
+
+  .m-jce {
+    justify-content: end;
+  }
+
+  .m-jcsb {
+    justify-content: space-between;
+  }
+
+  .m-jcsa {
+    justify-content: space-around;
+  }
+
+  .m-jcse {
+    justify-content: space-evenly;
+  }
+
+  .m-jcc {
+    justify-content: center;
+  }
+
+  .m-jstr {
+    justify-items: stretch;
+  }
+
+  .m-as {
+    align-items: start;
+  }
+
+  .m-ae {
+    align-items: end;
+  }
+
+  .m-ac {
+    align-items: center;
+  }
+
+  .m-acc {
+    align-content: center;
+  }
+
+  .m-acs {
+    align-content: start;
+  }
+
+  .m-acsb {
+    align-content: space-between;
+  }
+
+  .m-ace {
+    align-content: end;
+  }
+
+  .m-astr {
+    align-items: stretch;
+  }
+
+  .m-ass {
+    align-self: start;
+  }
+
+  .m-ase {
+    align-self: end;
+  }
+
+  .m-asc {
+    align-self: center;
+  }
+
+  .m-asstr {
+    align-self: stretch;
+  }
+
+  .m-jss {
+    justify-self: start;
+  }
+
+  .m-jse {
+    justify-self: end;
+  }
+
+  .m-jsc {
+    justify-self: center;
+  }
+
+  .m-jsstr {
+    justify-self: stretch;
+  }
+
+  .m-jcstr {
+    justify-content: stretch;
+  }
+}
+
+@include container(small only) {
+
+  .s-js {
+    justify-items: start;
+  }
+
+  .s-je {
+    justify-items: end;
+  }
+
+  .s-jc {
+    justify-items: center;
+  }
+
+  .s-jcs {
+    justify-content: start;
+  }
+
+  .s-jce {
+    justify-content: end;
+  }
+
+  .s-jcsb {
+    justify-content: space-between;
+  }
+
+  .s-jcsa {
+    justify-content: space-around;
+  }
+
+  .s-jcse {
+    justify-content: space-evenly;
+  }
+
+  .s-jcc {
+    justify-content: center;
+  }
+
+  .s-jstr {
+    justify-items: stretch;
+  }
+
+  .s-as {
+    align-items: start;
+  }
+
+  .s-ae {
+    align-items: end;
+  }
+
+  .s-ac {
+    align-items: center;
+  }
+
+  .s-acc {
+    align-content: center;
+  }
+
+  .s-acs {
+    align-content: start;
+  }
+
+  .s-ace {
+    align-content: end;
+  }
+
+  .s-astr {
+    align-items: stretch;
+  }
+
+  .s-ass {
+    align-self: start;
+  }
+
+  .s-ase {
+    align-self: end;
+  }
+
+  .s-asc {
+    align-self: center;
+  }
+
+  .s-acsb {
+    align-content: space-between;
+  }
+
+  .s-asstr {
+    align-self: stretch;
+  }
+
+  .s-jss {
+    justify-self: start;
+  }
+
+  .s-jse {
+    justify-self: end;
+  }
+
+  .s-jsc {
+    justify-self: center;
+  }
+
+  .s-jsstr {
+    justify-self: stretch;
+  }
+
+  .s-jcstr {
+    justify-content: stretch;
+  }
+}
+
+//------------- Standards -------------//
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 100%;
+  }
+}
+
+// wow.js ala Kodeks
+
+body:not(.wp-admin) {
+
+  .fade-me,
+  .fade-me-content>* {
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    transform: translateY(20px);
+
+    &.faded {
+      transform: translateY(0px);
+      opacity: 1;
+      transition: transform 1s ease, opacity 1s ease;
+    }
+  }
+}
