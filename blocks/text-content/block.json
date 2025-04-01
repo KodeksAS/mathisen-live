@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/text-content",
+  "title": "Text content",
+  "description": "Text content block",
+  "editorStyle": "file:./text-content.css",
+  "editorScript": "file:./text-content.js",
+  "category": "kodeks-blocks",
+  "icon": "media-text",
+  "apiVersion": 2,
+  "keywords": [
+    "text-content"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "text-content.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

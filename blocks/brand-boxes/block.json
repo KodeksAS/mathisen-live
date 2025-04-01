@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/brand-boxes",
+  "title": "Brand boxes",
+  "description": "Brand boxes block",
+  "editorStyle": "file:./brand-boxes.css",
+  "editorScript": "file:./brand-boxes.js",
+  "category": "kodeks-blocks",
+  "icon": "grid-view",
+  "apiVersion": 2,
+  "keywords": [
+    "brand-boxes"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "brand-boxes.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

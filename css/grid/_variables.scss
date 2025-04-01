@@ -1,77 +1,112 @@
 :root {
-  --grid-width: calc((var(--inline-padding) * 2) + 1340px); // Max width .grid class
+  --grid-width: calc((var(--block-padding) * 2) + 1706px); // Max width .grid class
   --column: calc(((var(--grid-width) - (var(--inline-padding) * 2)) - (var(--gutter) * 11)) / 12);
-  --inline-padding: #{rem-calc(30)};
-  --block-padding: #{rem-calc(50)};
+  --inline-padding: #{rem-calc(34)};
+  --block-padding: #{rem-calc(107)};
   --gutter: #{rem-calc(20)};
 
+  --header-height: 133px;
+
   /* TYPOGRAPHY */
-  --font-family: 'Source Sans',
-    sans-serif;
+
+  @font-face {
+    font-family: 'AkkuratLLSub-Bold';
+    src: url('fonts/AkkuratLLSub-Bold.woff2') format('woff2'),
+         url('fonts/AkkuratLLSub-Bold') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AkkuratLLSub-Regular';
+    src: url('fonts/AkkuratLLSub-Regular.woff2') format('woff2'),
+         url('fonts/AkkuratLLSub-Regular') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AkkuratLLWeb-Bold';
+    src: url('fonts/AkkuratLLWeb-Bold.woff2') format('woff2'),
+         url('fonts/AkkuratLLWeb-Bold') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AkkuratLLWeb-Regular';
+    src: url('fonts/AkkuratLLWeb-Regular.woff2') format('woff2'),
+         url('fonts/AkkuratLLWeb-Regular') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  --font-family-bold: 'AkkuratLLSub-Bold';
+  --font-family: 'AkkuratLLWeb-Regular';
 
   // DESKTOP
 
   // h1 
-  --h1-family: var(--font-family);
-  --h1-weight: 600;
-  --h1-size: 75px;
-  --h1-line-height: 77px;
+  --h1-family: var(--font-family-bold);
+  --h1-weight: normal;
+  --h1-size: clamp(39px, calc(39px + (138 - 39) * (100vw - 768px)/(1920 - 768)), 138px);
+  --h1-line-height: normal;
   --h1-font: var(--h1-weight) var(--h1-size)/var(--h1-line-height) var(--h1-family);
 
   // h2
-  --h2-family: var(--font-family);
-  --h2-weight: 600;
+  --h2-family: var(--font-family-bold);
+  --h2-weight: normal;
   --h2-size: 57px;
   --h2-line-height: 57px;
   --h2-font: var(--h2-weight) var(--h2-size)/var(--h2-line-height) var(--h2-family);
 
   // h3
-  --h3-family: var(--font-family);
-  --h3-weight: 600;
+  --h3-family: var(--font-family-bold);
+  --h3-weight: normal;
   --h3-size: 46px;
   --h3-line-height: 53px;
   --h3-font: var(--h3-weight) var(--h3-size)/var(--h3-line-height) var(--h3-family);
 
   // h4
   --h4-family: var(--font-family);
-  --h4-weight: 700;
-  --h4-size: 35px;
-  --h4-line-height: 43px;
+  --h4-weight: normal;
+  --h4-size: 38px;
+  --h4-line-height: 46px;
   --h4-font: var(--h4-weight) var(--h4-size)/var(--h4-line-height) var(--h4-family);
 
   // h5
-  --h5-family: var(--font-family);
-  --h5-weight: 700;
+  --h5-family: var(--font-family-bold);
+  --h5-weight: normal;
   --h5-size: 35px;
   --h5-line-height: 43px;
   --h5-font: var(--h5-weight) var(--h5-size)/var(--h5-line-height) var(--h5-family);
 
   // h6
-  --h6-family: var(--font-family);
-  --h6-weight: 700;
+  --h6-family: var(--font-family-bold);
+  --h6-weight: normal;
   --h6-size: 35px;
   --h6-line-height: 43px;
   --h6-font: var(--h6-weight) var(--h6-size)/var(--h6-line-height) var(--h6-family);
 
   // lead
   --lead-family: var(--font-family);
-  --lead-weight: 400;
+  --lead-weight: normal;
   --lead-size: 26px;
   --lead-line-height: 34px;
   --lead-font: var(--lead-weight) var(--lead-size)/var(--lead-line-height) var(--lead-family);
 
   // body
   --body-family: var(--font-family);
-  --body-weight: 400;
+  --body-weight: normal;
   --body-size: 18px;
   --body-line-height: 26px;
   --body-font: var(--body-weight) var(--body-size)/var(--body-line-height) var(--body-family);
 
   // quote
   --quote-family: var(--font-family);
-  --quote-weight: 400;
-  --quote-size: 18px;
-  --quote-line-height: 26px;
+  --quote-weight: normal;
+  --quote-size: clamp(27px, calc(39px + (78 - 27) * (100vw - 768px)/(1920 - 768)), 78px);
+  --quote-line-height: normal;
   --quote-font: var(--quote-weight) var(--quote-size)/var(--quote-line-height) var(--quote-family);
 
 
@@ -99,6 +134,10 @@
   --teal: #04CDA9;
   --grey: #EBEEED;
   --black: #000000;
+  --white: #FFFFFF;
+
+  --primary-color: #FF4800;
+  --secondary-color: #327B93;
 
   /* MISC */
 

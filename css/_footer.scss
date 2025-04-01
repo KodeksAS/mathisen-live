@@ -1,8 +1,14 @@
 .site-footer {
-    
-    position: absolute;
-    bottom: 0; 
+    /* position: absolute;
+    bottom: 0; */
     width: 100%; 
     margin: 0 auto;
-
+    background-color: var(--primary-color);
+    padding: 60px 0 60px 0;
+    .footer-logo {
+      img {
+        max-width: rem-calc(327.73);
+      }
+      
+    }
 } 

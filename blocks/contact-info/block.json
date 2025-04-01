@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/contact-info",
+  "title": "Contact info",
+  "description": "Contact info block",
+  "editorStyle": "file:./contact-info.css",
+  "editorScript": "file:./contact-info.js",
+  "category": "kodeks-blocks",
+  "icon": "id",
+  "apiVersion": 2,
+  "keywords": [
+    "contact-info"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "contact-info.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

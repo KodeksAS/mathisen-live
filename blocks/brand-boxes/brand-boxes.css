@@ -1,0 +1,65 @@
+section.brand-boxes .box-container .brand-box {
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  padding: 40px 37px;
+  color: var(--black);
+  position: relative;
+  padding-bottom: 180px;
+}
+section.brand-boxes .box-container .brand-box.has-bg {
+  background-color: var(--white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.brand-boxes .box-container .brand-box h4, section.brand-boxes .box-container .brand-box p {
+  color: var(--black);
+}
+section.brand-boxes .box-container .brand-box h4 {
+  text-transform: uppercase;
+}
+section.brand-boxes .box-container .brand-box h4 span {
+  display: block;
+  text-transform: none;
+}
+section.brand-boxes .box-container .brand-box .link-arrow {
+  display: inline-block;
+  background-color: var(--black);
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  width: 5.75rem;
+  height: 5.75rem;
+  border-radius: 46px;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: relative;
+}
+section.brand-boxes .box-container .brand-box .link-arrow::before {
+  content: "";
+  background-color: var(--white);
+  position: absolute;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-mask-image: url("/wp-content/themes/mathiesen-live/assets/icons/link-arrow-icon.svg");
+  mask-image: url("/wp-content/themes/mathiesen-live/assets/icons/link-arrow-icon.svg");
+  width: 4.6875rem;
+  height: 4.6875rem;
+  top: 8px;
+  left: 8px;
+}
+section.brand-boxes .box-container .brand-box:hover .link-arrow {
+  background-color: var(--white);
+}
+section.brand-boxes .box-container .brand-box:hover .link-arrow::before {
+  background-color: var(--primary-color);
+}
+section.brand-boxes .box-container .brand-box .box-footer {
+  padding: 40px 37px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+section.brand-boxes .box-container a.brand-box {
+  text-decoration: none;
+}

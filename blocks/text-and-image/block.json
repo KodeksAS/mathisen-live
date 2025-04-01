@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/text-and-image",
+  "title": "Text and image",
+  "description": "Text and image block",
+  "editorStyle": "file:./text-and-image.css",
+  "editorScript": "file:./text-and-image.js",
+  "category": "kodeks-blocks",
+  "icon": "align-left",
+  "apiVersion": 2,
+  "keywords": [
+    "text-and-image"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "text-and-image.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

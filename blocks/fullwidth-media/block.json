@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/fullwidth-media",
+  "title": "Fullwidth media",
+  "description": "Fullwidth media block",
+  "editorStyle": "file:./fullwidth-media.css",
+  "editorScript": "file:./fullwidth-media.js",
+  "category": "kodeks-blocks",
+  "icon": "format-image",
+  "apiVersion": 2,
+  "keywords": [
+    "fullwidth-media"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "fullwidth-media.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

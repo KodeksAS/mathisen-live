@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/hero",
+  "title": "Hero",
+  "description": "Hero block",
+  "editorStyle": "file:./hero.css",
+  "editorScript": "file:./hero.js",
+  "category": "kodeks-blocks",
+  "icon": "welcome-view-site",
+  "apiVersion": 2,
+  "keywords": [
+    "hero"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hero.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}

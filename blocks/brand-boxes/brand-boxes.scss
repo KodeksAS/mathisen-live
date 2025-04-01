@@ -1,0 +1,72 @@
+@import '../../css/grid/functions';
+section.brand-boxes {
+    .box-container {
+        .brand-box {
+            background-color: var(--primary-color);
+            border-radius: 16px;
+            padding: 40px 37px;
+            color: var(--black);
+            position: relative;
+            // aspect-ratio: 9 / 12;
+            &.has-bg {
+                background-color: var(--white);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover
+            }
+            h4, p  {
+                color: var(--black);
+            }
+            h4 {
+                text-transform: uppercase;
+                span {
+                  display: block;
+                  text-transform: none;
+                }
+            }
+            padding-bottom: 180px;
+            .link-arrow {
+                display: inline-block;
+                background-color: var(--black);
+                transition: background-color .2s ease-in-out;
+                width: rem-calc(92);
+                height: rem-calc(92);
+                border-radius: 46px;
+                text-indent: -9999px;
+                overflow: hidden;
+                position: relative;
+                &::before {
+                    content: "";
+                    background-color: var(--white);
+                    position: absolute;
+                    transition: all .2s ease-in-out;
+                    -webkit-mask-image: url('/wp-content/themes/mathiesen-live/assets/icons/link-arrow-icon.svg');
+                    mask-image: url('/wp-content/themes/mathiesen-live/assets/icons/link-arrow-icon.svg');
+                    width: rem-calc(75);
+                    height: rem-calc(75);
+                    top: 8px;
+                    left: 8px;
+                }
+            }
+            &:hover {
+                .link-arrow {
+                    background-color: var(--white);
+                    &::before {
+                        background-color: var(--primary-color);
+                    }
+                }
+            }
+            .box-footer {
+                padding: 40px 37px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
+        a.brand-box {
+            text-decoration: none;
+        }
+    }
+    
+}

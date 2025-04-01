@@ -1,7 +1,10 @@
 <?php
 
 // Add image sizes
-// add_image_size('hero', 1920, 0);
+add_image_size('hero', 1920, 0);
+add_image_size('thumb', 550, 0);
+add_image_size('half', 960, 0);
+
 
 // // Add custom styles to the WordPress editor
 // function kodeks_add_style_select_buttons($buttons)

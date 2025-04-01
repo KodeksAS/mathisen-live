@@ -1,0 +1,31 @@
+{
+  "name": "kodeks/quote-block",
+  "title": "Quote block",
+  "description": "Quote block block",
+  "editorStyle": "file:./quote-block.css",
+  "editorScript": "file:./quote-block.js",
+  "category": "kodeks-blocks",
+  "icon": "format-quote",
+  "apiVersion": 2,
+  "keywords": [
+    "quote-block"
+  ],
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "quote-block.php"
+  },
+  "supports": {
+    "align": false,
+    "customClassName": false,
+    "jsx": true,
+    "multiple": true
+  }
+}
