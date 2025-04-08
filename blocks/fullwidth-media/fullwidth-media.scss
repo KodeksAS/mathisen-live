@@ -1,1 +1,9 @@
 @import '../../css/grid/functions';
+
+section.fullwidth-media {
+  @include breakpoint(small only) {
+    .image-wrapper {
+      min-height: rem-calc(330);
+    }
+  }
+}

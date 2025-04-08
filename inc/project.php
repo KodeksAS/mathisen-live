@@ -36,3 +36,26 @@ add_image_size('half', 960, 0);
 
 // // Attach callback to 'tiny_mce_before_init' 
 // add_filter('tiny_mce_before_init', 'kodeks_custom_styles');
+
+
+
+// ------- First block check -------
+
+// If the first block is the heading block, add black backgriound to contact button
+
+function firstblockcheck($post_id)
+{
+    $content = get_post_field('post_content', $post_id);
+    $blocks = parse_blocks($content);
+
+    // Check if the first block is an ACF "kodeks/heading" block
+    if (!empty($blocks) && $blocks[0]['blockName'] === 'kodeks/hero') {
+        foreach ($blocks as $block) {
+            if ($block['blockName'] == 'kodeks/hero') {
+                return 'hero-top';
+                break; // Break out of the loop, since we found the block
+            }
+        }
+    }
+
+}

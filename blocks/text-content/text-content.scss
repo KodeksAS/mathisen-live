@@ -1,1 +1,32 @@
 @import '../../css/grid/functions';
+
+section.text-content {
+  background-color: var(--white);
+  .text-content-row {
+    h2 {
+      font-size: rem-calc(30);
+      line-height: rem-calc(36);
+      font-family: var(--font-family);
+      @include breakpoint(small only) {
+        font-size: rem-calc(14);
+        line-height: rem-calc(18);
+      }
+    }
+    p {
+      font-size: rem-calc(30);
+      line-height: rem-calc(36);
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(14);
+        line-height: rem-calc(18);
+      }
+    }
+
+    .text:not(:last-child) {
+      margin-bottom: 11rem;
+      @include breakpoint(small only) {
+        margin-bottom: rem-calc(60);
+      }
+    }
+  }
+}

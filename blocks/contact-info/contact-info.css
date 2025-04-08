@@ -1,0 +1,79 @@
+section.contact-info {
+  padding-top: 25rem;
+  padding-bottom: 12.5rem;
+}
+section.contact-info h2 {
+  font-size: 5.25rem;
+  line-height: 6.25rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-family);
+  letter-spacing: -2.5px;
+}
+section.contact-info .small-heading {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.625rem;
+}
+section.contact-info .small-heading p {
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+}
+section.contact-info p {
+  font-size: 2.0625rem;
+  line-height: 2.5rem;
+  margin-bottom: 2.1875rem;
+}
+section.contact-info p.less {
+  margin-bottom: 3.75rem;
+}
+section.contact-info ul li {
+  font-size: 2.0625rem;
+  line-height: 2.5rem;
+  margin-bottom: 5.75rem;
+  list-style-type: none;
+}
+section.contact-info ul li a {
+  color: var(--black);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+section.contact-info ul li a:hover {
+  color: var(--primary-color);
+}
+@media (max-width: 47.9375rem) {
+  section.contact-info {
+    padding-top: 10rem;
+    padding-bottom: 6.25rem;
+  }
+  section.contact-info h2 {
+    font-size: 1.8125rem;
+    line-height: 2.1875rem;
+    grid-column: 1/-1;
+  }
+  section.contact-info .small-heading {
+    font-size: 0.625rem;
+    line-height: 1.125rem;
+  }
+  section.contact-info .small-heading p {
+    font-size: 0.625rem;
+    line-height: 1.125rem;
+  }
+  section.contact-info p {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-bottom: 0.9375rem;
+  }
+  section.contact-info p.less {
+    margin-bottom: 1.25rem;
+  }
+  section.contact-info ul li {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-bottom: 1.25rem;
+  }
+}

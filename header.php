@@ -25,19 +25,25 @@
 
 </head>
 
-<body <?php body_class('kodeks-load'); ?> id="top">
+<?php 
+    $main_page_color = get_field('main_page_color', 'option');
+    ?>
+
+<body <?php body_class('kodeks-load ' . $main_page_color); ?> id="top">
     <?php
         get_template_part('breakpoints');
         kodeks_body_hook();
     ?>
     <a href="#site-content" id="skip-to-content"><?= __('Hopp til innhold', 'kodeks') ?></a>
+
     
-    <header class="site-header">
-        <div class="wrapper grid full side-padding acc">
-            <div class="start-1 end-6 grid">
+    
+    <header class="site-header <?= firstblockcheck(get_the_ID()); ?> <?= $main_page_color ?> ">
+        <div class="wrapper grid-12 full side-padding acc">
+            <div class="start-1 end-4 end-s-8 grid">
                 <a href="<?php echo home_url(); ?>" class="logo"><?= $logo ?></a>
             </div>
-            <div class="start-7 end-12 grid acc jce">
+            <div class="start-5 end-12 start-s-9 grid acc jce">
                 <?php 
                     $args = array(
                         'menu_class' => 'main-menu grid col cg-30 jce',        
@@ -71,45 +77,3 @@
     </div>
     
     <main id="site-content">
-        <!-- div class="wrapper grid-12 full acs js cg-s-0 side-padding">
-            <div class="span-all">
-                <h1>High quality brands for industrial flooring and coating </h1>
-            </div>
-            <div class="start-1 grid acc jcc col-1 odd">
-                col 1
-            </div>
-            <div class="start-2 grid acc jcc col-2 even">
-                col 2
-            </div>
-            <div class="start-3 grid acc jcc col-3 odd">
-                col 3
-            </div>
-            <div class="start-4 grid acc jcc col-4 even">
-                col 4
-            </div>
-            <div class="start-5 grid acc jcc col-5 odd">
-                col 5
-            </div>
-            <div class="start-6 grid acc jcc col-6 even">
-                col 6
-            </div>
-            <div class="start-7 grid acc jcc col-7 odd">
-                col 7
-            </div>
-            <div class="start-8 grid acc jcc col-8 even">
-                col 8
-            </div>
-            <div class="start-9 grid acc jcc col-9 odd">
-                col 9
-            </div>
-            <div class="start-10 grid acc jcc col-10 even">
-                col 10
-            </div>
-            <div class="start-11 grid acc jcc col-11 odd">
-                col 11
-            </div>
-            <div class="start-12 grid acc jcc col-12 even">
-                col 12
-            </div>
-        </div -->
-

@@ -1,1 +1,34 @@
 @import '../../css/grid/functions';
+
+section.quote-block { 
+  h4 {
+    font-size: rem-calc(29);
+    line-height: rem-calc(35);
+    padding-bottom: rem-calc(20);
+    
+    @include breakpoint(medium down) {
+      padding-bottom: rem-calc(80);
+    }
+  
+    @include breakpoint(small only) {
+      font-size: rem-calc(18);
+      line-height: rem-calc(22);
+    }
+    
+  }
+  p {
+    font-size: rem-calc(78);
+    line-height: rem-calc(83);
+
+    @include breakpoint(medium down) {
+      font-size: rem-calc(50);
+      line-height: rem-calc(60);
+    }
+
+    @include breakpoint(small only) {
+      font-size: rem-calc(27);
+      line-height: rem-calc(33);
+    }
+  }
+
+}

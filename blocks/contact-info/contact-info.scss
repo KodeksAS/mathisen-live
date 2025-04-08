@@ -1,1 +1,98 @@
 @import '../../css/grid/functions';
+
+section.contact-info {
+  padding-top: rem-calc(400);
+  padding-bottom: rem-calc(200);
+
+  h2 {
+    font-size: rem-calc(84);
+    line-height: rem-calc(100);
+    margin-bottom: rem-calc(40);
+    font-family: var(--font-family);
+    letter-spacing: -2.5px;
+  }
+
+  .small-heading {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-size: rem-calc(22);
+    line-height: rem-calc(40);
+    letter-spacing: 1px;
+    margin-bottom: rem-calc(10);
+    p {
+      font-size: rem-calc(22);
+      line-height: rem-calc(40);
+      
+     }
+
+  }
+
+  p {
+    font-size: rem-calc(33);
+    line-height: rem-calc(40);
+    margin-bottom: rem-calc(35);
+    &.less {
+      margin-bottom: rem-calc(60);
+    }
+    
+  }
+
+  ul {
+    li {
+      font-size: rem-calc(33);
+      line-height: rem-calc(40);
+      margin-bottom: rem-calc(92);
+      list-style-type: none;
+      a {
+        color: var(--black);
+        transition: all 0.5s ease;
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  @include breakpoint(small only) {
+    padding-top: rem-calc(160);
+    padding-bottom: rem-calc(100);
+
+    h2 {
+      font-size: rem-calc(29);
+      line-height: rem-calc(35);
+      grid-column: 1/-1;
+    }
+
+    .small-heading {
+      font-size: rem-calc(10);
+      line-height: rem-calc(18);
+      p {
+        font-size: rem-calc(10);
+        line-height: rem-calc(18);
+        
+       }
+  
+    }
+
+    p {
+      font-size: rem-calc(14);
+      line-height: rem-calc(17);
+      margin-bottom: rem-calc(15);
+      &.less {
+        margin-bottom: rem-calc(20);
+      }
+      
+    }
+
+    ul {
+      li {
+        font-size: rem-calc(14);
+        line-height: rem-calc(17);
+        margin-bottom: rem-calc(20);
+      }
+    }
+
+  }
+}

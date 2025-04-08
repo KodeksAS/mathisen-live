@@ -9,6 +9,111 @@
       img {
         max-width: rem-calc(327.73);
       }
+
+      @include breakpoint(medium down) {
+        margin-bottom: rem-calc(50);
+      }
+
+      @include breakpoint(small only) {
+       img {
+        max-width: rem-calc(143);
+       }
+      }
       
+    }
+    p {
+      font-size: rem-calc(33);
+      line-height: rem-calc(40);
+
+      @include breakpoint(medium down) {
+        font-size: rem-calc(25);
+        line-height: rem-calc(34);
+      }
+      @include breakpoint(small only) {
+        font-size: rem-calc(13);
+        line-height: rem-calc(15);
+      }
+
+    }
+    .top-link { 
+      margin-top: rem-calc(150);
+      a {
+        font-size: rem-calc(33);
+        line-height: rem-calc(40);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        color: var(--black);
+        column-gap: rem-calc(20);
+        text-decoration: none;
+      }
+
+      @include breakpoint(medium down) {
+        a {
+          font-size: rem-calc(25);
+          line-height: rem-calc(34);
+        }
+      }
+
+      @include breakpoint(small only) {
+        margin-top: rem-calc(40);
+        a {
+          font-size: rem-calc(9);
+          line-height: rem-calc(10);
+          column-gap: rem-calc(10);
+          span {
+            width: rem-calc(5);
+            height: rem-calc(8);
+          }
+        }
+      }
+    }
+    .copy {
+      font-size: rem-calc(33);
+      line-height: rem-calc(40);
+      color: var(--black);
+      margin-top: rem-calc(150);
+
+      @include breakpoint(medium down) {
+ 
+          font-size: rem-calc(25);
+          line-height: rem-calc(34);
+        
+
+      }
+
+      @include breakpoint(small only) {
+        margin-top: rem-calc(40);
+   
+          font-size: rem-calc(9);
+          line-height: rem-calc(10);
+        
+
+      }
+    }
+
+
+    &.blue {
+      background-color: var(--secondary-color);
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+      p {
+        color: var(--white);
+      }
+      .top-link a {
+        color: var(--white);
+      }
+      .copy {
+        color: var(--white);
+      }
+      a {
+        span {
+          &:after {
+            background-color: var(--white);
+          }
+        }
+      }
     }
 } 

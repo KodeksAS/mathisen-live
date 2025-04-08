@@ -1,5 +1,7 @@
 var initializeBlock = function () {
-    console.log('Hello world');
+
+  
+  
 }
 
 if (window.acf) {

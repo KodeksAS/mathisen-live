@@ -1,1 +1,104 @@
 @import '../../css/grid/functions';
+
+section.text-and-image {
+  background-color: var(--secondary-color);
+  min-height: rem-calc(950);
+  .background-wrapper {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: rem-calc(40);
+    min-height: rem-calc(950);
+
+    .img-wrapper {
+      grid-column: 1 / 5;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .wrapper {
+    .text {
+      grid-column: 5 / 13;
+      min-height: rem-calc(950);
+      display: flex;
+      align-items: end;
+    }
+
+    h2 {
+      width: 100%;
+      font-size: rem-calc(29);
+      line-height: rem-calc(35);
+      color: var(--white);
+      font-family: var(--font-family);
+      padding-bottom: rem-calc(30);
+    }
+
+    p {
+      font-size: rem-calc(78);
+      line-height: rem-calc(81);
+      color: var(--white);
+      padding-bottom: rem-calc(80);
+
+      @include breakpoint(medium down) {
+        font-size: rem-calc(50);
+        line-height: rem-calc(60);
+      }
+      
+    }
+    
+  }
+
+  @include breakpoint(small only) {
+    min-height: auto;
+    padding-top: rem-calc(60);
+    padding-bottom: rem-calc(60);
+
+    .background-wrapper {
+      display:none;
+    }
+
+    .wrapper {
+      
+      .text {
+        grid-column: 1 /-1;
+        min-height: rem-calc(340);
+        .bottom {
+          display: grid;
+          height: 100%;
+        }
+
+        h2 {
+          font-size: rem-calc(18);
+          line-height: rem-calc(22);
+          padding-bottom: rem-calc(80);
+        }
+        p {
+          padding-bottom: rem-calc(0);
+          font-size: rem-calc(27);
+          line-height: rem-calc(33);
+          display: flex;
+          align-items: end;
+        }
+      }
+    }
+  }
+
+  &.orange {
+    background-color: var(--primary-color);
+    .wrapper {  
+      h2 {
+        color: var(--black);
+      }
+  
+      p {
+        color: var(--black);
+      }
+    }
+  }
+
+}

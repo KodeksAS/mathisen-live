@@ -105,9 +105,9 @@
         {
             "key": "field_67ea9347b1266",
             "label": "Background color",
-            "name": "",
+            "name": "background_color",
             "aria-label": "",
-            "type": "clone",
+            "type": "button_group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -116,13 +116,36 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "field_67e3c6ac968e4"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "choices": {
+                "primary-color": "Orange",
+                "secondary-color": "Blue"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_67ee70f5ae682",
+            "label": "Anchor ID",
+            "name": "anchor_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -143,5 +166,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743426401
+    "modified": 1744015732
 }

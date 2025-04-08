@@ -5,3 +5,20 @@ section.hero .content-wrapper {
   padding: 133px 5.05vw 80px 5.05vw;
   height: 917px;
 }
+@media (max-width: 47.9375rem) {
+  section.hero .content-wrapper {
+    padding: 133px 5.05vw 30px 5.05vw;
+    height: 22.5rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  section.hero .image-wrapper {
+    min-height: 20.625rem;
+  }
+}
+section.hero.blue {
+  background-color: var(--secondary-color);
+}
+section.hero.blue h1 {
+  color: var(--white);
+}

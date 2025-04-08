@@ -1,0 +1,32 @@
+section.text-content {
+  background-color: var(--white);
+}
+section.text-content .text-content-row h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: var(--font-family);
+}
+@media (max-width: 47.9375rem) {
+  section.text-content .text-content-row h2 {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+section.text-content .text-content-row p {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+@media (max-width: 47.9375rem) {
+  section.text-content .text-content-row p {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+section.text-content .text-content-row .text:not(:last-child) {
+  margin-bottom: 11rem;
+}
+@media (max-width: 47.9375rem) {
+  section.text-content .text-content-row .text:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
+}

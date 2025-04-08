@@ -12,16 +12,19 @@ else :
         $alt = $hero_image['alt'];
         $size = 'hero';
         $img = $hero_image['sizes'][ $size ];
-        $hero_image_tag = '<div class="grid full"><div class="image-wrapper panorama"><img src="' . $img . '" alt="' . $alt . '" /></div></div>';
+        $hero_image_tag = '<div class="grid full"><div class="image-wrapper panorama fade-me"><img src="' . $img . '" alt="' . $alt . '" /></div></div>';
     } else {
         $hero_image_tag = '';
     }
+
+    $anchor_id = get_field('anchor_id') ? 'id="'.get_field('anchor_id').'"' : '';
+    $background_color = get_field('background_color');
 ?>
 
-    <section class="<?= $block_class ?>">
+    <section class="<?= $block_class ?> <?= $background_color ?>" <?= $anchor_id ?>>
         <div class="grid full acs rg-0 jc">
-            <div class="content-wrapper grid ace js full">
-                <?= $hero_text ?>
+            <div class="content-wrapper grid ace js full fade-me">
+               <?= $hero_text ?>
             </div>
             <?= $hero_image_tag ?>
         </div>

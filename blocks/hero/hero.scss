@@ -4,5 +4,24 @@ section.hero {
     .content-wrapper { 
         padding: 133px 5.05vw 80px 5.05vw;
         height: 917px;
+        
+        
+        @include breakpoint(small only) {
+          padding: 133px 5.05vw 30px 5.05vw;
+          height: rem-calc(360);
+        }
+    }
+
+    @include breakpoint(small only) {
+      .image-wrapper {
+        min-height: rem-calc(330);
+      }
+    }
+
+    &.blue {
+        background-color: var(--secondary-color);
+        h1 {
+            color: var(--white);
+        }
     }
 }

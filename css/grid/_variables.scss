@@ -7,6 +7,10 @@
 
   --header-height: 133px;
 
+  @include breakpoint(small only) {
+    --header-height: 90px;
+  }
+
   /* TYPOGRAPHY */
 
   @font-face {
@@ -49,9 +53,20 @@
   // h1 
   --h1-family: var(--font-family-bold);
   --h1-weight: normal;
-  --h1-size: clamp(39px, calc(39px + (138 - 39) * (100vw - 768px)/(1920 - 768)), 138px);
-  --h1-line-height: normal;
+  //--h1-size: clamp(39px, calc(39px + (138 - 39) * (100vw - 768px)/(1920 - 768)), 138px);
+  --h1-size: 138px;
+  --h1-line-height: 141px;
   --h1-font: var(--h1-weight) var(--h1-size)/var(--h1-line-height) var(--h1-family);
+
+  @include breakpoint(medium down) {
+    --h1-size: 90px;
+    --h1-line-height: 100px;
+  }
+
+  @include breakpoint(small only) {
+    --h1-size: 39px;
+    --h1-line-height: 44px;
+  }
 
   // h2
   --h2-family: var(--font-family-bold);
@@ -73,6 +88,12 @@
   --h4-size: 38px;
   --h4-line-height: 46px;
   --h4-font: var(--h4-weight) var(--h4-size)/var(--h4-line-height) var(--h4-family);
+
+  @include breakpoint(small only) {
+    --h4-size: 31px;
+    --h4-line-height: 37px;
+  }
+
 
   // h5
   --h5-family: var(--font-family-bold);
@@ -145,10 +166,10 @@
   --bezier: .5s cubic-bezier(0, 0, 0, 1);
 
   // Icons
-  $icons: comma, separated, list;
+  $icons: arrow, up;
 
   @each $icon in $icons {
-    --icon-#{$icon}: url('../assets/icon-#{$icon}.svg');
+    --icon-#{$icon}: url('/wp-content/themes/mathiesen-live/assets/icons/icon-#{$icon}.svg');
 
     .icon-#{$icon} {
       &::after {

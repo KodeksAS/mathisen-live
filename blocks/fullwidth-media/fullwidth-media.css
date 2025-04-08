@@ -1,0 +1,5 @@
+@media (max-width: 47.9375rem) {
+  section.fullwidth-media .image-wrapper {
+    min-height: 20.625rem;
+  }
+}

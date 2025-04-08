@@ -1,13 +1,20 @@
 .site-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white);
     .wrapper {
         height: var(--header-height);
     }
 
     .logo {
         max-width: rem-calc(406.72);
+
+        @include breakpoint(small only) {
+          max-width: rem-calc(206);
+        }
     }
 
     .main-menu {
@@ -43,7 +50,7 @@
                 margin-left: 30px;
                 a {
                     transition: all 0.3s ease-in-out;
-                    background-color: var(--black);
+                    background-color: var(--primary-color);
                     color: var(--white);
                     padding: 10px 20px;
                     border-radius: 30px;
@@ -64,19 +71,82 @@
         } 
     }
     
+    &.hero-top {
+      background-color: var(--primary-color);
+      .main-menu {
+        li {
+          &.contact-button {
+            a {
+                background-color: var(--black);
+            }
+            &:hover {                 
+              a {
+                  background-color: var(--white);
+              }
+            }
+          }
+        }
+      }
+      &.blue {
+        background-color: var(--secondary-color);
+        .logo {
+          .st0{
+                fill: var(--white);
+            }
+            path {
+                fill: var(--white);
+            }
+        }
+        li {
+          a {
+            color: var(--white);
+            &::after {
+              background-color: var(--white);
+          }
+          }
+          &.contact-button {
+            a {
+              
+                background-color: var(--white);
+                color: var(--black);
+            }
+            &:hover {                 
+              a {
+                  background-color: var(--black);
+                  color: var(--white);
+              }
+            }
+          }
+        }
+
+        #menu-toggle {
+          span {
+              background-color: var(--white);
+          }
+          &::before, &::after {
+              background-color: var(--white);
+              
+          }
+        }
+
+
+
+      }
+    }
+
     #menu-toggle {
-        width: 43px;
-        height: 24px;
+        width: 30px;
+        height: 20px;
         position: relative;
         display: none;
         span {
             width: 100%;
-            height: 4px;
+            height: 2px;
             background-color: var(--black);
             overflow: hidden;
             display: inline-block;
             position: absolute;
-            top: 10px;
+            top: 9px;
             opacity: 1;
             transition: width ease 0.1s, opacity ease 0.1s;
             z-index: 999;
@@ -84,7 +154,7 @@
         &::before, &::after {
             content: "";
             width: 100%;
-            height: 4px;
+            height: 2px;
             background-color: var(--black);
             position: absolute;
             
@@ -103,11 +173,11 @@
                 opacity: 0;			
             }
             &::before {    
-                top: 9px;
+                top: 10px;
                 transform: rotate(45deg);
             }
             &::after {
-                bottom: 13px;
+                bottom: 8px;
                 transform: rotate(-45deg);
             }
         }
@@ -132,14 +202,19 @@
     }
     .dropdown-menu-wrapper {
         padding-top: var(--header-height);
+        position: absolute;
+        bottom: rem-calc(0);
+        left: 5.575%;
     }
     ul.main-menu-dd {
         margin-bottom: 100px;
         li {
             list-style-type: none;
-            text-align: center;
+            //text-align: center;
             vertical-align: top;
             margin-bottom: 0;
+            text-align: left;
+
             a {
                 display: block;
                 font-size: 33px;
@@ -148,6 +223,14 @@
                 text-decoration: none;
                 padding: 20px 0;
                 cursor: pointer;
+                color: var(--black);
+                font-size: 60px;
+                letter-spacing: -1px;
+
+                @include breakpoint(small only) {
+                    font-size: 54px;
+                    padding: 10px 0;
+                }
             }
             ul {
                 display: none;
@@ -203,4 +286,24 @@
             }
         }
     }
+}
+
+.menu-open {
+  .site-header {
+    background-color: var(--primary-color);
+  }
+}
+
+
+body.blue {
+  #dropdown-menu {
+    background-color: var(--secondary-color);
+    ul.main-menu-dd {
+      li {
+          a {
+              color: var(--white);
+          }
+        }
+      }
+  }
 }

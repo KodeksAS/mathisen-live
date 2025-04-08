@@ -9,14 +9,33 @@ body {
   &.kodeks-load * {
     transition: none !important;
   }
+
+  &.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+
+  }
 }
 
 .section-padding {
     &.top {
         padding-top: rem-calc(190);
+        @include breakpoint(medium only) {
+          padding-top: rem-calc(120);
+        }
+        @include breakpoint(small only) {
+          padding-top: rem-calc(60);
+        }
     }
     &.bottom {
         padding-bottom: rem-calc(176);
+        @include breakpoint(medium only) {
+          padding-bottom: rem-calc(120);
+        }
+        @include breakpoint(small only) {
+          padding-bottom: rem-calc(60);
+        }
     }
 }
 
@@ -153,6 +172,7 @@ p.quote {
   background-color: #000;
   text-decoration: none;
   border-radius: 5px;
+  z-index: 9999;
 
   &:focus {
     pointer-events: all;
@@ -177,4 +197,20 @@ p.quote {
     mask-repeat: no-repeat;
     mask-position: center;
   }
+}
+
+
+body.home {
+  background-color: var(--primary-color);
+
+  &.blue {
+    background-color: var(--secondary-color);
+    
+  }
+}
+
+
+.error404 {
+  padding-top: rem-calc(190);
+  padding-bottom: rem-calc(190);
 }
