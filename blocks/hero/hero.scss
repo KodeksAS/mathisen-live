@@ -2,8 +2,9 @@
 section.hero {
     background-color: var(--primary-color);
     .content-wrapper { 
-        padding: 133px 5.05vw 80px 5.05vw;
-        height: 917px;
+        //padding: 133px 5.05vw 80px 5.05vw;
+        padding: 30vh 5.05vw 80px 5.05vw;
+        //height: 917px;
         
         
         @include breakpoint(small only) {

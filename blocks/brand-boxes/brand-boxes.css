@@ -63,7 +63,7 @@ section.brand-boxes .box-container .brand-box h4 span {
 }
 section.brand-boxes .box-container .brand-box p {
   font-size: 1.5625rem;
-  line-height: 1.9375rem;
+  line-height: 1.8125rem;
   min-height: 23.75rem;
 }
 section.brand-boxes .box-container .brand-box .link-arrow {
@@ -142,6 +142,9 @@ section.brand-boxes .box-container a.brand-box {
   }
   section.brand-boxes .box-container {
     padding-bottom: 3rem;
+  }
+  section.brand-boxes .box-container .brand-box.no-link {
+    display: none !important;
   }
 }
 @media (max-width: 47.9375rem) {

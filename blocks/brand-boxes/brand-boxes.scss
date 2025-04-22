@@ -70,7 +70,7 @@ section.brand-boxes {
             }
             p {
               font-size: rem-calc(25);
-              line-height: rem-calc(31);
+              line-height: rem-calc(29);
               min-height: rem-calc(380);
             }
             padding-bottom: 180px;
@@ -175,6 +175,11 @@ section.brand-boxes {
       }
       .box-container {   
         padding-bottom: 3rem;
+        .brand-box {
+          &.no-link {
+            display: none !important;
+          }
+        }
       }
     }
 
@@ -214,6 +219,8 @@ section.brand-boxes {
           .box-footer {
               padding: 35px 24px;
           }
+
+         
         }
 
       }

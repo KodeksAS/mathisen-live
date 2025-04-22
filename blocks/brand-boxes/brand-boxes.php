@@ -42,7 +42,7 @@ else :
                             $link_target = $box_link['target'] ? $box_link['target'] : '_self';
                             $box_tag = '<a class="' . $box_class . '" href="' . $link_url . '" target="' . $link_target . '" ' . $backgrond_image . '><div class="box-content grid acs js">' . $box_headline . '' . $box_text . '<div class="box-footer grid acc jce"><div class="link-arrow"><span class="icon-arrow"></span></div></div></div><div class="overlay frosted-glass"></div></a>'; 
                         } else {
-                            $box_tag = '<div class="' . $box_class . '" ' . $backgrond_image . '><div class="box-content grid acs js">' . $box_headline . '' . $box_text . '</div></div>';
+                            $box_tag = '<div class="' . $box_class . ' no-link" ' . $backgrond_image . '><div class="box-content grid acs js">' . $box_headline . '' . $box_text . '</div></div>';
                         }
 
                     ?>

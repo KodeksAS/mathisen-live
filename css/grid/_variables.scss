@@ -54,19 +54,22 @@
   --h1-family: var(--font-family-bold);
   --h1-weight: normal;
   //--h1-size: clamp(39px, calc(39px + (138 - 39) * (100vw - 768px)/(1920 - 768)), 138px);
-  --h1-size: 138px;
-  --h1-line-height: 141px;
+  // --h1-size: 138px;
+  // --h1-line-height: 141px;
+
+  --h1-size:  7.5vw;
+  --h1-line-height: 7.5vw;
   --h1-font: var(--h1-weight) var(--h1-size)/var(--h1-line-height) var(--h1-family);
 
-  @include breakpoint(medium down) {
-    --h1-size: 90px;
-    --h1-line-height: 100px;
-  }
+  // @include breakpoint(medium down) {
+  //   --h1-size: 90px;
+  //   --h1-line-height: 100px;
+  // }
 
-  @include breakpoint(small only) {
-    --h1-size: 39px;
-    --h1-line-height: 44px;
-  }
+  // @include breakpoint(small only) {
+  //   --h1-size: 39px;
+  //   --h1-line-height: 44px;
+  // }
 
   // h2
   --h2-family: var(--font-family-bold);

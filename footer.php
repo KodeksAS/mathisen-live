@@ -29,9 +29,9 @@
         <div class="span-4 span-m-6 grid acs js">
             <p><?= __('Visitor address', 'kodeks') ?> <br /> <?= $address ?></p>
             <p>
-            <?= $phone ? 'T ' .$phone : '' ?><br />
-            <?= $fax ? 'F ' .$fax : '' ?><br />
-            <?= $email ? 'M ' .$email : '' ?>
+            <?= $phone ? 'T&nbsp;&nbsp;&nbsp;' .$phone : '' ?><br />
+            <?= $fax ? 'F&nbsp;&nbsp;&nbsp;' .$fax : '' ?><br />
+            <?= $email ? 'M&nbsp;&nbsp;&nbsp;' . $email : '' ?>
             </p>
         </div>
         <div class="span-4 span-m-6 grid acs js rg-30">

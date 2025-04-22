@@ -157,6 +157,9 @@ h1 {
 p.quote {
     font: var(--quote-font);  
     letter-spacing: -0.17rem;
+    @include breakpoint(medium down){
+         letter-spacing: rem-calc(0);
+    }
 }
 
 

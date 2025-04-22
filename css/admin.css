@@ -10,8 +10,8 @@
   --font-family: "AkkuratLLWeb-Regular";
   --h1-family: var(--font-family-bold);
   --h1-weight: normal;
-  --h1-size: 138px;
-  --h1-line-height: 141px;
+  --h1-size: 7.5vw;
+  --h1-line-height: 7.5vw;
   --h1-font: var(--h1-weight) var(--h1-size)/var(--h1-line-height) var(--h1-family);
   --h2-family: var(--font-family-bold);
   --h2-weight: normal;
@@ -94,18 +94,6 @@
   src: url("fonts/AkkuratLLWeb-Regular.woff2") format("woff2"), url("fonts/AkkuratLLWeb-Regular") format("woff");
   font-weight: normal;
   font-style: normal;
-}
-@media (max-width: 79.9375rem) {
-  :root {
-    --h1-size: 90px;
-    --h1-line-height: 100px;
-  }
-}
-@media (max-width: 47.9375rem) {
-  :root {
-    --h1-size: 39px;
-    --h1-line-height: 44px;
-  }
 }
 @media (max-width: 47.9375rem) {
   :root {
@@ -7991,6 +7979,11 @@
 .acf-block-preview p.quote {
   font: var(--quote-font);
   letter-spacing: -0.17rem;
+}
+@media (max-width: 79.9375rem) {
+  .acf-block-preview p.quote {
+    letter-spacing: 0;
+  }
 }
 .acf-block-preview #skip-to-content {
   position: fixed;

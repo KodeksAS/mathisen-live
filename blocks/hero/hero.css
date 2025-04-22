@@ -2,8 +2,7 @@ section.hero {
   background-color: var(--primary-color);
 }
 section.hero .content-wrapper {
-  padding: 133px 5.05vw 80px 5.05vw;
-  height: 917px;
+  padding: 30vh 5.05vw 80px 5.05vw;
 }
 @media (max-width: 47.9375rem) {
   section.hero .content-wrapper {
