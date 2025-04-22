@@ -172,7 +172,7 @@
   $icons: arrow, up;
 
   @each $icon in $icons {
-    --icon-#{$icon}: url('/wp-content/themes/mathiesen-live/assets/icons/icon-#{$icon}.svg');
+    --icon-#{$icon}: url('/wp-content/themes/mathisen-live/assets/icons/icon-#{$icon}.svg');
 
     .icon-#{$icon} {
       &::after {

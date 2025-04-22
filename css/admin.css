@@ -63,8 +63,8 @@
   --secondary-color: #327B93;
   /* MISC */
   --bezier: .5s cubic-bezier(0, 0, 0, 1);
-  --icon-arrow: url("/wp-content/themes/mathiesen-live/assets/icons/icon-arrow.svg");
-  --icon-up: url("/wp-content/themes/mathiesen-live/assets/icons/icon-up.svg");
+  --icon-arrow: url("/wp-content/themes/mathisen-live/assets/icons/icon-arrow.svg");
+  --icon-up: url("/wp-content/themes/mathisen-live/assets/icons/icon-up.svg");
 }
 @media (max-width: 47.9375rem) {
   :root {
