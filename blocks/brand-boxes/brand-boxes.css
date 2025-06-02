@@ -51,8 +51,20 @@ section.brand-boxes .box-container .brand-box.has-bg .overlay {
 section.brand-boxes .box-container .brand-box.has-bg:hover .overlay {
   opacity: 0;
 }
+section.brand-boxes .box-container .brand-box.has-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: white;
+  z-index: 0;
+}
 section.brand-boxes .box-container .brand-box h4, section.brand-boxes .box-container .brand-box p {
   color: var(--black);
+  z-index: 1;
 }
 section.brand-boxes .box-container .brand-box h4 {
   text-transform: uppercase;
