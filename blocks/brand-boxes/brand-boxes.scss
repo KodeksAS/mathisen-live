@@ -56,7 +56,20 @@ section.brand-boxes {
                     .overlay {
                         opacity: 0;
                     }
+                    &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 16px;
+                    background: white;
+                    z-index: 0;
+                    opacity: 0.5;
                 }
+                }
+
                  &:before {
                     content: "";
                     position: absolute;
@@ -69,6 +82,13 @@ section.brand-boxes {
                     z-index: 0;
                     opacity: 0.5;
                 }
+              
+            }
+            &.no-link {
+              &:before {
+                display: none;
+              }
+
             }
             h4, p  {
                 color: var(--black);
