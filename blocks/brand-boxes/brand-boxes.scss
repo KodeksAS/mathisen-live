@@ -49,25 +49,25 @@ section.brand-boxes {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
+                 h4, p  {
+                  color: var(--white);
+                  transition: all 0.4s ease-in-out;
+                 }
                 .overlay {
                     opacity: 1;
+                    display: none;
                 }
                 &:hover {
                     .overlay {
                         opacity: 0;
                     }
                     &:before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    border-radius: 16px;
-                    background: white;
-                    z-index: 0;
-                    opacity: 0.5;
+                    opacity: 0;
+                    background: var(--secondary-color);
                 }
+                h4, p  {
+                  opacity: 0;
+                 }
                 }
 
                  &:before {
@@ -78,9 +78,11 @@ section.brand-boxes {
                     right: 0;
                     bottom: 0;
                     border-radius: 16px;
-                    background: white;
+                    background: var(--secondary-color);
                     z-index: 0;
-                    opacity: 0.5;
+                    opacity: 0.8;
+                    mix-blend-mode: multiply;
+                    transition: all 0.4s ease-in-out;
                 }
               
             }

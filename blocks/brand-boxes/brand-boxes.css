@@ -45,23 +45,24 @@ section.brand-boxes .box-container .brand-box.has-bg {
   background-repeat: no-repeat;
   background-size: cover;
 }
+section.brand-boxes .box-container .brand-box.has-bg h4, section.brand-boxes .box-container .brand-box.has-bg p {
+  color: var(--white);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
 section.brand-boxes .box-container .brand-box.has-bg .overlay {
   opacity: 1;
+  display: none;
 }
 section.brand-boxes .box-container .brand-box.has-bg:hover .overlay {
   opacity: 0;
 }
 section.brand-boxes .box-container .brand-box.has-bg:hover:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 16px;
-  background: white;
-  z-index: 0;
-  opacity: 0.5;
+  opacity: 0;
+  background: var(--secondary-color);
+}
+section.brand-boxes .box-container .brand-box.has-bg:hover h4, section.brand-boxes .box-container .brand-box.has-bg:hover p {
+  opacity: 0;
 }
 section.brand-boxes .box-container .brand-box.has-bg:before {
   content: "";
@@ -71,9 +72,12 @@ section.brand-boxes .box-container .brand-box.has-bg:before {
   right: 0;
   bottom: 0;
   border-radius: 16px;
-  background: white;
+  background: var(--secondary-color);
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 section.brand-boxes .box-container .brand-box.no-link:before {
   display: none;
