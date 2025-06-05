@@ -225,7 +225,7 @@ section.brand-boxes.blue .box-container .brand-box p, section.brand-boxes.blue .
   color: var(--white);
 }
 section.brand-boxes.blue .box-container .brand-box.has-bg p, section.brand-boxes.blue .box-container .brand-box.has-bg h4 {
-  color: var(--black);
+  color: var(--white);
 }
 section.brand-boxes.blue .box-container .brand-box:hover .link-arrow span::after {
   background-color: var(--secondary-color);
